@@ -14,9 +14,12 @@ var lossCount = 0;
 var crystalTotalCount = 0;
 
 function startGame() {
+    crystalTotalCount = 0;
+    $("#crystalTotalCount").html(crystalTotalCount);
     //Generates random game number
-    randomTargetNumber = Math.floor(Math.random() * 120) + 19;
+    randomTargetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     console.log("Random Number", randomTargetNumber);
+    
    
     //Appends randomTargetNumber to the crystal counter
     $("#crystalTarget").html(randomTargetNumber);
@@ -41,93 +44,55 @@ function startGame() {
     
 }
 
-//Checks to see if game has been won or lost
-// 
-
 //Setting up button clicks
-
 $(document).ready(function() { 
     $('.crystalOne').click(function() { 
         crystalTotalCount = crystalOneNumber + crystalTotalCount;
         $("#crystalTotalCount").html(crystalTotalCount);
-        console.log("crystal counters", crystalTotalCount);
-        if (crystalTotalCount > randomTargetNumber) {
-            alert("You Lose");
-            lossCount++
-            $("#losses").html(lossCount);
-            
-        }
-        else if (crystalTotalCount == randomTargetNumber){
-            alert("You Win!");
-            winCount++
-            $("#wins").html(winCount);
-            setTimeout(function(){gameStart();}, 1000);
-            setTimeout(function(){alert("You Won!");;}, 1000);
-        }
+        console.log("crystal counters", crystalTotalCount); 
+        gameOver();
     }); 
     $('.crystalTwo').click(function() { 
         crystalTotalCount = crystalTwoNumber + crystalTotalCount;
         $("#crystalTotalCount").html(crystalTotalCount);
         console.log("crystal counters", crystalTotalCount);
-        if (crystalTotalCount > randomTargetNumber) {
-            alert("You Lose");
-            lossCount++
-            $("#losses").html(lossCount);
-            
-        }
-        else if (crystalTotalCount == randomTargetNumber){
-            alert("You Win!");
-            winCount++
-            $("#wins").html(winCount);
-            setTimeout(function(){gameStart();}, 1000);
-            setTimeout(function(){alert("You Won!");;}, 1000);
-        }
-
+        gameOver();
     }); 
     $('.crystalThree').click(function() { 
         crystalTotalCount = crystalThreeNumber + crystalTotalCount;
         $("#crystalTotalCount").html(crystalTotalCount);
         console.log("crystal counters", crystalTotalCount);
-        if (crystalTotalCount > randomTargetNumber) {
-            alert("You Lose");
-            lossCount++
-            $("#losses").html(lossCount);
-            
-        }
-        else if (crystalTotalCount == randomTargetNumber){
-            alert("You Win!");
-            winCount++
-            $("#wins").html(winCount);
-            setTimeout(function(){gameStart();}, 1000);
-            setTimeout(function(){alert("You Won!");;}, 1000);
-        }
+        gameOver(); 
     }); 
     $('.crystalFour').click(function() { 
         crystalTotalCount = crystalFourNumber + crystalTotalCount;
         $("#crystalTotalCount").html(crystalTotalCount);
         console.log("crystal counters", crystalTotalCount);
-        if (crystalTotalCount > randomTargetNumber) {
-            alert("You Lose");
-            lossCount++
-            $("#losses").html(lossCount);
-            
-        }
-        else if (crystalTotalCount == randomTargetNumber){
-            alert("You Win!");
-            winCount++
-            $("#wins").html(winCount);
-            setTimeout(function(){gameStart();}, 1000);
-            setTimeout(function(){alert("You Won!");;}, 1000);
-        }
-        //check win function goes here so you dont have to retype the if else statement multiple times
+        gameOver();
     }); 
 
 
+    //Game over function
+function gameOver(){
+    if (crystalTotalCount > randomTargetNumber) {
+            lossCount++
+            $("#losses").html(lossCount);
+            alert("You Lost!")
+            startGame();
+            
+        }
+        else if (crystalTotalCount == randomTargetNumber){
+            winCount++
+            $("#wins").html(winCount);
+            alert("You Won!")
+        }
+}
 
 
 
 //Main Process
 startGame();
+gameOver();
 
 
 

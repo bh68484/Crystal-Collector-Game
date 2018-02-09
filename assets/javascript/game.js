@@ -15,7 +15,7 @@ var crystalTotalCount = 0;
 
 function startGame() {
     //Generates random game number
-    randomTargetNumber = Math.floor(Math.random() * 100) + 30;
+    randomTargetNumber = Math.floor(Math.random() * 120) + 19;
     console.log("Random Number", randomTargetNumber);
    
     //Appends randomTargetNumber to the crystal counter
@@ -40,7 +40,7 @@ function startGame() {
     console.log("Crystal Four Number", crystalFourNumber);
     
 }
-//this.val - look into
+
 //Checks to see if game has been won or lost
 // 
 
@@ -49,45 +49,81 @@ function startGame() {
 $(document).ready(function() { 
     $('.crystalOne').click(function() { 
         crystalTotalCount = crystalOneNumber + crystalTotalCount;
-        alert(crystalTotalCount);
         $("#crystalTotalCount").html(crystalTotalCount);
         console.log("crystal counters", crystalTotalCount);
+        if (crystalTotalCount > randomTargetNumber) {
+            alert("You Lose");
+            lossCount++
+            $("#losses").html(lossCount);
+            
+        }
+        else if (crystalTotalCount == randomTargetNumber){
+            alert("You Win!");
+            winCount++
+            $("#wins").html(winCount);
+            setTimeout(function(){gameStart();}, 1000);
+            setTimeout(function(){alert("You Won!");;}, 1000);
+        }
     }); 
     $('.crystalTwo').click(function() { 
         crystalTotalCount = crystalTwoNumber + crystalTotalCount;
-        alert(crystalTotalCount);
         $("#crystalTotalCount").html(crystalTotalCount);
         console.log("crystal counters", crystalTotalCount);
+        if (crystalTotalCount > randomTargetNumber) {
+            alert("You Lose");
+            lossCount++
+            $("#losses").html(lossCount);
+            
+        }
+        else if (crystalTotalCount == randomTargetNumber){
+            alert("You Win!");
+            winCount++
+            $("#wins").html(winCount);
+            setTimeout(function(){gameStart();}, 1000);
+            setTimeout(function(){alert("You Won!");;}, 1000);
+        }
 
     }); 
     $('.crystalThree').click(function() { 
         crystalTotalCount = crystalThreeNumber + crystalTotalCount;
-        alert(crystalTotalCount);
         $("#crystalTotalCount").html(crystalTotalCount);
         console.log("crystal counters", crystalTotalCount);
+        if (crystalTotalCount > randomTargetNumber) {
+            alert("You Lose");
+            lossCount++
+            $("#losses").html(lossCount);
+            
+        }
+        else if (crystalTotalCount == randomTargetNumber){
+            alert("You Win!");
+            winCount++
+            $("#wins").html(winCount);
+            setTimeout(function(){gameStart();}, 1000);
+            setTimeout(function(){alert("You Won!");;}, 1000);
+        }
     }); 
     $('.crystalFour').click(function() { 
         crystalTotalCount = crystalFourNumber + crystalTotalCount;
-        alert(crystalTotalCount);
         $("#crystalTotalCount").html(crystalTotalCount);
         console.log("crystal counters", crystalTotalCount);
+        if (crystalTotalCount > randomTargetNumber) {
+            alert("You Lose");
+            lossCount++
+            $("#losses").html(lossCount);
+            
+        }
+        else if (crystalTotalCount == randomTargetNumber){
+            alert("You Win!");
+            winCount++
+            $("#wins").html(winCount);
+            setTimeout(function(){gameStart();}, 1000);
+            setTimeout(function(){alert("You Won!");;}, 1000);
+        }
+        //check win function goes here so you dont have to retype the if else statement multiple times
     }); 
-}); 
-//old code - maybe revisit
-// var winCheck = function() {
-    //     if (crystalTotalCount == randomTargetNumber) {
-    //         wins++;
-    //         alert("Hooray! You won!");
-    //         $("#wins").html(winCount);
-    //         startGame();
-    
-    //     } else if (crystalTotalCount > randomTargetNumber) {
-    //         losses++;
-    //         alert("You Lose!");
-    //         $("#losses").html(lossCount);
-    //         startGame();
-    //     }
-    // }
+
+
+
 
 
 //Main Process
@@ -95,4 +131,5 @@ startGame();
 
 
 
-});
+})
+})

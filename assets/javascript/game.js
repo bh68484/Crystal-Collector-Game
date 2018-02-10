@@ -25,21 +25,21 @@ function startGame() {
     $("#crystalTarget").html(randomTargetNumber);
    
     //Generates random number for Crystal One
-    crystalOneNumber = Math.floor(Math.random() * 3) + 1;
+    crystalOneNumber = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
     console.log("Crystal One Number", crystalOneNumber); 
     // $("#crystalOne").attr("value", crystalOneNumber);
    
     
     //Generates random number for Crystal Two
-    crystalTwoNumber = Math.floor(Math.random() * 8) + 1;
+    crystalTwoNumber = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
     console.log("Crystal Two Number", crystalTwoNumber);
     
     //Generates random number for Crystal Three
-    crystalThreeNumber = Math.floor(Math.random() * 11) + 1;
+    crystalThreeNumber = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
     console.log("Crystal Three Number", crystalThreeNumber);
     
     //Generates random Number for Crystal Four
-    crystalFourNumber = Math.floor(Math.random() * 12) + 1;
+    crystalFourNumber = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
     console.log("Crystal Four Number", crystalFourNumber);
     
 }

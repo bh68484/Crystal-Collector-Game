@@ -85,6 +85,7 @@ function gameOver(){
             winCount++
             $("#wins").html(winCount);
             alert("You Won!")
+            startGame();
         }
 }
 

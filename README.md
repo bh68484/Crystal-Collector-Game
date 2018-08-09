@@ -14,7 +14,7 @@ Each time when the game starts, the game will change the values of each crystal 
 
 [![Crystal Collector](https://raw.githubusercontent.com/bh68484/Crystal-Collector-Game/master/demo/demo.jpg)](https://youtu.be/M96G_ZA3U4w "Crystal Collector")
 
-## Live Deploment
+## Live Deployment
 
 - [Crystal Collector](https://bh68484.github.io/Crystal-Collector-Game/) - Game Link
 
